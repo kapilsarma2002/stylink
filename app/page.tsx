@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Highlight } from '@/components/ui/hero'
+import { Highlight } from '@/components/hero'
 
 const Home = () => {
   return (
