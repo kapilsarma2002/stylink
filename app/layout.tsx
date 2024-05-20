@@ -29,7 +29,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={inter.className}>
           <HeroHighlight>
-            <div className="z-99">
+            <div className="z-99 h-screen overflow-hidden">
               <NavBar />
               {children}
             </div>
