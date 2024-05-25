@@ -1,16 +1,7 @@
 import type { Metadata } from 'next'
+import NavBar from '@/components/navbar'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { HeroHighlight } from '@/components/hero'
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from '@clerk/nextjs'
-import './globals.css'
-import NavBar from '@/components/navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,17 +16,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className={inter.className}>
-          <HeroHighlight>
-            <div className="z-99 h-screen overflow-hidden">
-              <NavBar />
-              {children}
-            </div>
-          </HeroHighlight>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en">
+      <body className={inter.className}>
+        <div className="bg-white text-black z-99 h-screen">
+          <NavBar />
+          {children}
+        </div>
+      </body>
+    </html>
   )
 }

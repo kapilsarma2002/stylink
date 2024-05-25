@@ -1,0 +1,13 @@
+{
+  "version": "6",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1716649841712,
+      "tag": "0000_premium_mentallo",
+      "breakpoints": true
+    }
+  ]
+}
