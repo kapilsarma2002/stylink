@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import NavBar from '@/components/navbar'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { NextUIProvider } from '@nextui-org/react'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="bg-white text-black z-99 h-screen">
           {/* <NavBar /> */}
-          {children}
+          <NextUIProvider>{children}</NextUIProvider>
         </div>
       </body>
     </html>
