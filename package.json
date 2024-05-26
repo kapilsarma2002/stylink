@@ -8,15 +8,19 @@
     "start": "next start",
     "lint": "next lint",
     "db:push": "drizzle-kit push --config=drizzle.config.ts",
-    "db:generate": "drizzle-kit generate --config=drizzle.config.ts"
+    "db:generate": "drizzle-kit generate --config=drizzle.config.ts",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.3.6",
     "@types/pg": "^8.11.6",
+    "bcrypt": "^5.1.1",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.5",
     "drizzle-kit": "^0.21.4",
     "drizzle-orm": "^0.30.10",
     "framer-motion": "^11.2.4",
+    "jsonwebtoken": "^9.0.2",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.3",
     "pg": "^8.11.5",
