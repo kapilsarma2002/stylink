@@ -1,7 +1,7 @@
-import SignupForm from '@/components/signinForm'
+import SigninForm from '@/components/signinForm'
 
 const SigninPage = () => {
-  return <SignupForm />
+  return <SigninForm />
 }
 
 export default SigninPage

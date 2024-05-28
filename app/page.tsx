@@ -4,7 +4,7 @@ import { Highlight, HeroHighlight } from '@/components/hero'
 
 const Home = () => {
   return (
-    <HeroHighlight className='overflow-hidden'>
+    <HeroHighlight>
       <div className="flex flex-row h-screen w-screen text-black">
         <div className="flex flex-wrap w-2/3 justify-center items-center">
           <motion.h1

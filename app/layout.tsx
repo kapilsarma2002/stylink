@@ -21,16 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="text-black z-99 relative h-screen w-screen bg-slate-50">
-          <aside className="absolute left-0 top-0 w-[200px] h-full">
-            <Sidebar />
-          </aside>
-          <main className="w-[calc(100vw-200px)] h-full ml-[200px]">
-            <div className="p-3 h-full w-full">
-              <div className="rounded-lg border w-full h-full bg-white">
-                <NextUIProvider>{children}</NextUIProvider>
-              </div>
-            </div>
-          </main>{' '}
+         <NextUIProvider>{children}</NextUIProvider>
         </div>
       </body>
     </html>
