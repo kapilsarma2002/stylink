@@ -23,7 +23,7 @@ const linksBottom = [
 const Sidebar = () => {
   return (
     <div className="w-full h-full py-3">
-      <div className="px-4">
+      <div className="px-4 ml-8 mt-4">
         <Link href="/dashboard">
           <Logo />
         </Link>
@@ -48,10 +48,17 @@ const Sidebar = () => {
             return (
               <div key={link.href}>
                 <Link href={link.href}>
-                  <div className="flex gap-2 items-center hover:bg-white border hover:border-black/20 border-transparent py-2 px-6 rounded-lg transition-all">
-                    <link.Icon size={16} />
-                    <span>{link.name}</span>
-                  </div>
+                  {link.name === 'Sign out' ? (
+                    <div className="flex gap-2 items-center hover:bg-black border hover:text-white hover:border-black/30 border-transparent py-2 px-6 rounded-lg transition-all">
+                      <link.Icon size={16} />
+                      <span>{link.name}</span>
+                    </div>
+                  ) : (
+                    <div className="flex gap-2 items-center hover:bg-white border hover:border-black/20 border-transparent py-2 px-6 rounded-lg transition-all">
+                      <link.Icon size={16} />
+                      <span>{link.name}</span>
+                    </div>
+                  )}
                 </Link>
               </div>
             )
