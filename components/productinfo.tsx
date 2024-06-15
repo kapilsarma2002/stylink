@@ -6,23 +6,21 @@ const ProductInfo = async ({ id }) => {
   const product: any = await getProductFromId(id)
 
   return (
-    <div className="h-full w-full border border-black">
-      <div className="h-[60px] p-4 text-3xl">{product[0].description}</div>
-      <div className="h-[calc(100vh-160px)] flex flex-row justify-center overflow-y-auto">
-        <Image
-          src={product[0].image_url}
-          alt={product[0].description}
-          width={600}
-          height={500}
-        />
-        <Image
-          src={product[0].image_url_back}
-          alt={product[0].description}
-          width={600}
-          height={500}
-        />
+    <div className="h-full w-full flex flex-row items-center justify-center">
+      <div className="h-full w-1/2 border border-black">
+        <div className="h-[calc(100vh-180px)] flex justify-center">
+          <Image
+            src={product[0].image_url}
+            alt={product[0].description}
+            width={600}
+            height={600}
+            className="border border-black my-4 rounded-lg"
+          />
+        </div>
+        {/* <QRLinkModal /> */}
+        <div className="border border-black h-[150px] mx-28 flex flex-row"></div>
       </div>
-      <QRLinkModal />
+      <div className="w-1/2 h-full border border-black">something</div>
     </div>
   )
 }

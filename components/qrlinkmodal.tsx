@@ -23,8 +23,8 @@ const QRLinkModal = () => {
         open
       </Button> */}
       <div className="text" onClick={onOpen}>
-            Click here to link your profile to QR code
-          </div>
+        Click here to link your profile to QR code
+      </div>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
         <ModalContent>
           {(onClose) => (
@@ -36,6 +36,7 @@ const QRLinkModal = () => {
                   placeholder="Enter your profile link"
                   type="text"
                   variant="bordered"
+                  className='text-black'
                 />
               </ModalBody>
               <ModalFooter>
