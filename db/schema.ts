@@ -44,3 +44,14 @@ export const orders = pgTable('order', {
   totalPrice: text('totalPrice').notNull(),
   status: orderEnum('status').default('placed').notNull(),
 })
+
+export const ratings = pgTable('rating', {
+  id: id(),
+  product_id: id()
+    .references(() => products.id)
+    .notNull(),
+  user_id: id()
+    .references(() => users.id)
+    .notNull(),
+  rating: integer('rating').notNull(),
+})
