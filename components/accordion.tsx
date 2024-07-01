@@ -38,7 +38,6 @@ const AccordionComp = () => {
           content: 'pt-0 pb-6 text-base',
         }}
         items={details}
-        selectionMode="multiple"
       >
         {details
           ? details.map(({ title, items }) => (
