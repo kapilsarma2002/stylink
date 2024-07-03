@@ -1,11 +1,12 @@
 'use client'
-import { useState } from 'react'
+import { useRecoilState } from 'recoil'
+import { sizeState } from './state'
 import { SizeButton } from '@/components/button'
 
 const sizes = ['S', 'M', 'L', 'XL', 'XXL', 'XXXL']
 
 const Size = () => {
-    const [selectedSize, setSelectedSize] = useState('')
+  const [selectedSize, setSelectedSize] = useRecoilState(sizeState)
 
   return (
     <div className="flex flex-col justify-between items-start w-full">

@@ -35,7 +35,9 @@ const ProductInfo = async ({ id }) => {
           <AccordionComp />
         </div>
 
-        <div className='w-full'><CartandWishlist /></div>
+        <div className='w-full'>
+          <CartandWishlist product={product[0]} />
+        </div>
       </div>
     </div>
   )

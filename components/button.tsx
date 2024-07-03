@@ -31,9 +31,11 @@ export const WishlistIcon = ({
 export const Solid = ({
   text,
   isWidthFull,
+  onClick
 }: {
   text: string
-  isWidthFull: boolean
+  isWidthFull: boolean,
+  onClick: any
 }) => {
   return (
     <button

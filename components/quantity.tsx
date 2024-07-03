@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useRecoilState } from 'recoil'
+import { quantityState } from './state'
 
 const Quantity = () => {
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useRecoilState(quantityState)
 
   const increment = () => setQuantity((prevQuantity) => prevQuantity + 1)
   const decrement = () =>
