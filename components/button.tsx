@@ -42,6 +42,7 @@ export const Solid = ({
       className={`${
         isWidthFull ? 'w-full' : ''
       } px-4 py-2 bg-black text-white text-lg rounded-xl font-semibold hover:bg-black/[0.8] hover:shadow-lg`}
+      onClick={onClick}
     >
       {text}
     </button>
