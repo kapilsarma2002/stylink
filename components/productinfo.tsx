@@ -1,6 +1,6 @@
 import Size from '@/components/size'
 import Quantity from '@/components/quantity'
-import CartandWishlist from '@/components/wishlist'
+import CartandWishlist from '@/components/cartandwishlist'
 import { getProductFromId } from '@/utils/products'
 import Rating from '@/components/rating'
 import AccordionComp from '@/components/accordion'

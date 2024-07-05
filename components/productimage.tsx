@@ -1,11 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import { useState } from "react"
+import { useEffect, useState } from 'react'
+import { productState } from '@/components/state'
+import { useRecoilState } from 'recoil'
 
 const ProductImage = ({ product }: any) => {
   const productImages = [product[0].image_url, product[0].image_url_back]
   const [selectedImage, setSelectedImage] = useState(product[0].image_url)
+  const [productCartState, setProductCartState] = useRecoilState(productState)
 
+  useEffect(() => {
+    setProductCartState({id: product[0].id})
+  }, [])
 
   return (
     <div>
@@ -26,7 +32,9 @@ const ProductImage = ({ product }: any) => {
               alt={product[0].description}
               width={150}
               height={100}
-              className={`border rounded-[100%] ${image === selectedImage ? 'border-gray-500' : ''}`}
+              className={`border rounded-[100%] ${
+                image === selectedImage ? 'border-gray-500' : ''
+              }`}
               onClick={() => setSelectedImage(image)}
             />
           </div>

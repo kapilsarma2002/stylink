@@ -1,7 +1,6 @@
 'use client'
 import { useRecoilState } from 'recoil'
-import { cartState } from './state'
-import { sizeState } from '@/components/state'
+import { sizeState, cartState, quantityState, productState } from '@/components/state'
 import { Solid, WishlistIcon } from '@/components/button'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -11,12 +10,14 @@ const outlineText = 'Add to Wishlist'
 
 const CartandWishlist = ({ product }) => {
   const [cart, setCart] = useRecoilState(cartState)
+  const selectedProduct = useRecoilState(productState)
   const selectedSize = useRecoilState(sizeState)
+  const selectedQuantity = useRecoilState(quantityState)
 
   const addToCart = () => {
     setCart((oldCart) => {
       const productIndex = oldCart.findIndex(
-        (item) => item.product.id === product.id && item.size === sizeState
+        (item) => item.product.id === product.id && item.size === selectedSize
       )
 
       if (productIndex !== -1) {
@@ -24,13 +25,20 @@ const CartandWishlist = ({ product }) => {
         const newCart = [...oldCart]
         newCart[productIndex] = {
           ...newCart[productIndex],
-          quantity: newCart[productIndex].quantity + 1,
+          quantity: newCart[productIndex].quantity + selectedQuantity,
         }
 
         return newCart
       } else {
         // Product not in cart, add it
-        return [...oldCart, { product, size: sizeState, quantity: 1 }]
+        return [
+          ...oldCart,
+          {
+            product: product.id,
+            size: selectedSize,
+            quantity: selectedQuantity,
+          },
+        ]
       }
     })
 
