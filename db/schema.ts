@@ -1,6 +1,7 @@
+import { user } from '@nextui-org/theme'
 import { randomUUID } from 'crypto'
 import { sql } from 'drizzle-orm'
-import { pgTable, boolean, text, integer, pgEnum } from 'drizzle-orm/pg-core'
+import { pgTable, boolean, text, integer, pgEnum, varchar } from 'drizzle-orm/pg-core'
 
 const id = () =>
   text('id')
@@ -54,4 +55,23 @@ export const ratings = pgTable('rating', {
     .references(() => users.id)
     .notNull(),
   rating: integer('rating').notNull(),
+})
+
+export const cart = pgTable('cart', {
+  id: id(),
+  user_id: id()
+    .references(() => users.id)
+    .notNull(),
+})
+
+export const cart_products = pgTable('cart_product', {
+  id: id(),
+  cart_id: id()
+    .references(() => cart.id)
+    .notNull(),
+  product_id: id()
+    .references(() => products.id)
+    .notNull(),
+  quantity: integer('quantity').notNull(),
+  size: varchar('size').notNull(),
 })
