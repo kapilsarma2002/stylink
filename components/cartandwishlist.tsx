@@ -1,8 +1,9 @@
 'use client'
 import { useRecoilState } from 'recoil'
 import { sizeState, cartState, quantityState, productState } from '@/components/state'
-import { Solid, WishlistIcon } from '@/components/button'
+import { WishlistIcon } from '@/components/button'
 import { ToastContainer, toast } from 'react-toastify'
+import CartButton from '@/components/cartbutton'
 import 'react-toastify/dist/ReactToastify.css'
 
 const cartText = 'Add to Cart'
@@ -47,7 +48,8 @@ const CartandWishlist = ({ product }) => {
 
   return (
     <div className="flex flex-col items-center justify-between gap-4 w-full pr-4">
-      <Solid text={cartText} isWidthFull={true} onClick={addToCart} />
+      {/* <Solid text={cartText} isWidthFull={true} onClick={addToCart} /> */}
+      <CartButton cartText={cartText} product={product.id} quantity={selectedQuantity[0]} size={selectedSize[0]} />
       <WishlistIcon text={outlineText} isWidthFull={true} />
       <ToastContainer />
     </div>

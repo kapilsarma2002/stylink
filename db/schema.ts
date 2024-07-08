@@ -59,17 +59,17 @@ export const ratings = pgTable('rating', {
 
 export const cart = pgTable('cart', {
   id: id(),
-  user_id: id()
+  user_id: text('user_id')
     .references(() => users.id)
     .notNull(),
 })
 
 export const cart_products = pgTable('cart_product', {
   id: id(),
-  cart_id: id()
+  cart_id: text('cart_id')
     .references(() => cart.id)
     .notNull(),
-  product_id: id()
+  product_id: text('product_id')
     .references(() => products.id)
     .notNull(),
   quantity: integer('quantity').notNull(),
