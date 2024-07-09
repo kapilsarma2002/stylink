@@ -9,7 +9,7 @@ import { getUserFromToken } from '@/utils/authTools'
 const COOKIE_NAME = process.env.COOKIE_NAME
 
 export const AddToCart = async (
-  product: any,
+  product: string,
   quantity: number,
   size: string
 ) => {

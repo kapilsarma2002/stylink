@@ -1,6 +1,7 @@
 'use client'
 import { useRecoilValue } from 'recoil'
 import { quantityState, sizeState, cartState, productState } from '@/components/state'
+import CartProducts from '@/components/cartProducts'
 
 const Cart = () => {
   const quantity = useRecoilValue(quantityState)
@@ -8,20 +9,7 @@ const Cart = () => {
   const product = useRecoilValue(productState)
   const cart = useRecoilValue(cartState)
 
-  console.log('product : ', product)
-  console.log('cart : ', cart)
-
-  return (
-    <div>
-      {cart.map((item, idx) => (
-          <div key={idx}>
-            <div>{item.id}</div>
-            <div>{item.size}</div>
-            <div>{item.quantity}</div>
-          </div>
-      ))}
-    </div>
-  )
+  return <div><CartProducts /></div>
 }
 
 export default Cart
