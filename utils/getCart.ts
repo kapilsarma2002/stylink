@@ -1,6 +1,6 @@
 'use server'
 import { db } from '@/db/db'
-import { cart_products, cart } from '@/db/schema'
+import { cart_products, cart, products } from '@/db/schema'
 import { eq } from 'drizzle-orm'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
@@ -20,13 +20,13 @@ export const GetCartItems = async () => {
       productId: cart_products.product_id,
       quantity: cart_products.quantity,
       size: cart_products.size,
+      name: products.name,
     })
     .from(cart_products)
     .innerJoin(cart, eq(cart_products.cart_id, cart.id))
+    .innerJoin(products, eq(cart_products.product_id, products.id))
     .where(eq(cart.user_id, user.id))
     .execute()
-
-  console.log('cartItems : ', cartItems)
 
   return cartItems
 }
