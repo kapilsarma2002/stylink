@@ -21,6 +21,7 @@ export const GetCartItems = async () => {
       quantity: cart_products.quantity,
       size: cart_products.size,
       name: products.name,
+      price: products.price,
     })
     .from(cart_products)
     .innerJoin(cart, eq(cart_products.cart_id, cart.id))
